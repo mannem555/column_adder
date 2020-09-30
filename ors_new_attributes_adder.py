@@ -4,6 +4,7 @@ import numpy as np
 # original dataframe
 data=pd.read_csv("data_sources/catalog_product_ors_full_data.csv")
 
+
 # dataframe with new columns and values
 extra_coldata=pd.read_excel("data_sources/Trained_entities.xlsx")
 
@@ -65,8 +66,14 @@ class Appender:
 app=Appender(data)
 app.append_extra_colvals(extra_coldata,"ES mapper","Sample Values")
 new_df=app.get_new_dataframe()
+
+# To display the shape of old df
 print(f"original dataframe shape:{data.shape}")
+
+# To display the shape of new df
 print(f"new datafram shape: {new_df.shape}")
+
+# To save the newly created file 
 app.save("data_sources/ors_new.xlsx","excel")
 
 
