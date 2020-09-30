@@ -12,6 +12,8 @@ class Appender:
         self.dataframe=dataframe
         print(self.dataframe.head())
         print(self.dataframe.shape)
+        print(self.dataframe.columns)
+        print(self.dataframe.info())
     def append_extra_colvals(self,extra_colvals,cols_column,values_column,delimiter=","):
         """
             This function takes a dataframe with a column with extra attributes 
